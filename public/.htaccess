@@ -1,0 +1,12 @@
+<Limit GET POST PUT DELETE>
+order deny,allow
+allow from all
+</Limit>
+
+AddDefaultCharset Off
+#php_flag magic_quotes_gpc Off  <-- Geeft een 500 error op de DEV omgeving :S
+#Options			-Indexes    <-- Geeft een 500 error op de DEV omgeving :S
+RewriteEngine	On
+RewriteBase		/
+
+RewriteRule		!^(cache|font|img)/		index.php [L,NC,QSA]
